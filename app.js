@@ -1,5 +1,6 @@
 const calculator = require('./calculator.js');
 
+console.log("starting...");
 console.log(calculator.add(3, 5));
 console.log(calculator.substract(13, 5));
 console.log(calculator.multiply(3, 5));
