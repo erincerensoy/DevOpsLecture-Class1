@@ -12,4 +12,27 @@ router.get('/add', (req, res) => {
   res.status(200).json({ result: additionResult });
 });
 
+router.get('/add', (req, res) => {
+  let additionResult = calculator.add(parseInt(req.query.a), parseInt(req.query.b));
+  res.status(200).json({ result: additionResult });
+});
+
+router.get('/add', (req, res) => {
+  let additionResult = calculator.add(parseInt(req.query.a), parseInt(req.query.b));
+  res.status(200).json({ result: additionResult });
+});
+
+router.get('/add', (req, res) => {
+  let additionResult = calculator.add(parseInt(req.query.a), parseInt(req.query.b));
+  res.status(200).json({ result: additionResult });
+});
+
+add = (a, b) => {
+  return a + b;
+}
+
+substract = (a, b) => {
+  return a - b;
+}
+
 module.exports = router
