@@ -19,8 +19,6 @@ stages:
     displayName: Build
     pool:
       vmImage: $(vmImageName)
-    npm run test
-  displayName: 'npm run test'
   steps:
   - task: NodeTool@0
     inputs:
