@@ -12,6 +12,9 @@ app.use(bodyParser.json());
 app.use('/v1/api', routes)
 
 //Server
-app.listen(port, () => {
-    console.log(`App listening at http://localhost:${port}`)
+app.listen(port, (err) => {
+    if (err) {
+        logger.error('Error::', err);
+    }
+    logger.info(`running server on from port:::::::${port}`);
 });
