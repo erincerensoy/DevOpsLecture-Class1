@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const routes = require('./routes');
 
 //IP, Port
-const PORT = 80;
+const PORT = 443;
 const HOST = '0.0.0.0';
 
 // App
