@@ -14,7 +14,7 @@ app.use('/v1/api', routes)
 //Server
 app.listen(port, (err) => {
     if (err) {
-        logger.error('Error::', err);
+        console.error('Error::', err);
     }
-    logger.info(`running server on from port:::::::${port}`);
+    console.log(`running server on from port:::::::${port}`);
 });
