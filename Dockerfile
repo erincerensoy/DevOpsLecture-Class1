@@ -6,7 +6,7 @@ WORKDIR /usr/src/app
 
 # Install app dependencies
 
-COPY src/package*.json ./
+COPY package*.json ./
 
 RUN npm install
 
@@ -20,5 +20,5 @@ COPY . .
 
 EXPOSE 8080
 
-CMD [ "src/node", "index.js" ]
+CMD [ "node", "src/app.js" ]
 
