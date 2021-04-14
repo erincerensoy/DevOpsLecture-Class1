@@ -18,7 +18,7 @@ router.get('/', (req, res) => {
   res.status(200).json({ result: additionResult });
 });
 
-router.get('/', (req, res) => {
+router.get('/multiply', (req, res) => {
   let additionResult = calculator.multiply(parseInt(req.query.a), parseInt(req.query.b));
   res.status(200).json({ result: additionResult });
 });
