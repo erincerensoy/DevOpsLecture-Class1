@@ -3,7 +3,7 @@ const router = express.Router();
 const calculator = require('./calculator.js');
 
 
-router.get('/add2', (req, res) => {
+router.get('/add3', (req, res) => {
   let additionResult = calculator.add(parseInt(req.query.a), parseInt(req.query.b));
   res.status(200).json({ result: additionResult });
 });
