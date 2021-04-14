@@ -19,7 +19,6 @@
   "homepage": "https://github.com/erincerensoy/DevOpsLecture-Class1#readme",
   "dependencies": {
     "chai": "^4.3.0",
-    "express": "^4.17.1",
     "mocha": "^8.3.0"
   }
 }
