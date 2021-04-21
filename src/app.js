@@ -5,14 +5,13 @@ const routes = require('./routes');
 //IP, Port
 const port = process.env.PORT || 80
 
-// App
-const app = express();
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
-app.use('/v1/api', routes)
+const exp = express();
+exp.use(bodyParser.urlencoded({ extended: false }));
+exp.use(bodyParser.json());
+exp.use('/v1/api', routes)
 
 //Server
-app.listen(port, (err) => {
+exp.listen(port, (err) => {
     if (err) {
         console.error('Error::', err);
     }
