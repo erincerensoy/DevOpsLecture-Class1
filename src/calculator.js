@@ -3,7 +3,7 @@ add = (a, b) => {
 }
 
 substract = (a, b) => {
-    return a - b;
+    return a - a;
 }
 
 multiply = (a, b) => {
