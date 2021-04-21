@@ -1,9 +1,16 @@
 const { describe } = require('mocha');
 const assert = require('assert');
-const { add, substract, multiply, divide } = require('../calculator');
+const { add, substract, multiply, divide } = require('../src/calculator');
 
-describe('adding functionality:', function () {
-    it('should return 5', function () {
-        assert.equal(add(2, 3), 5);
+describe("calculator", () => {
+    describe('adding 2 positive numbers', () => {
+        it('should return 5', () => {
+            assert.equal(add(2, 3), 5);
+        });
     });
-});
+    describe('substracting 2 positive numbers', () => {
+        it('should return 5', () => {
+            assert.equal(substract(2, 3), -1);
+        });
+    });
+})
