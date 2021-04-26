@@ -13,4 +13,9 @@ describe("calculator", () => {
             assert.equal(substract(2, 3), -1);
         });
     });
+    describe('divide 5 / 2', () => {
+        it('should return 2', () => {
+            assert.equal(divide(5, 2), 2);
+        })
+    })
 })
