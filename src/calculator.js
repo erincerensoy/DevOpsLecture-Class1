@@ -19,5 +19,5 @@ square = (a) => {
 };
 
 module.exports = {
-    add, substract, multiply, divide
+    add, substract, multiply, divide, square
 };
