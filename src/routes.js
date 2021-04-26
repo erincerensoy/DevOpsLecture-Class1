@@ -23,6 +23,10 @@ router.get('/multiply', (req, res) => {
   res.status(200).json({ result: additionResult });
 });
 
+router.get('/square', (req, res) => {
+  let additionResult = calculator.square(parseInt(req.query.a));
+  res.status(200).json({ result: additionResult });
+});
 
 add = (a, b) => {
   return a + b;
