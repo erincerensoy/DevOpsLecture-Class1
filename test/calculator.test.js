@@ -10,4 +10,11 @@ describe("calculator", () => {
             })
         })
     })
+    describe("division", () => {
+        describe("dividing 100 to 20", () => {
+            it("should return 5", () => {
+                assert.equal(divide(100, 20), 5);
+            })
+        })
+    })
 })

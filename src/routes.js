@@ -13,8 +13,8 @@ router.get('/substract', (req, res) => {
   res.status(200).json({ result: additionResult });
 });
 
-router.get('/', (req, res) => {
-  let additionResult = calculator.divide(parseInt(req.query.a), parseInt(req.query.b));
+router.get('/divide', (req, res) => {
+  let additionResult = calculator.add(parseInt(req.query.a), parseInt(req.query.b));
   res.status(200).json({ result: additionResult });
 });
 
