@@ -17,8 +17,8 @@
 							"    pm.response.to.have.status(200)",
 							"});",
 							"",
-							"pm.test(\"response is 30\", () => {",
-							"    pm.response.to.have.jsonBody(\"result\", 30)",
+							"pm.test(\"response is 5\", () => {",
+							"    pm.response.to.have.jsonBody(\"result\", 5)",
 							"});"
 						],
 						"type": "text/javascript"
@@ -29,72 +29,26 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://calculator-class1-basic2.azurewebsites.net/v1/api/add?a=10&b=20",
+					"raw": "https://calculator-class1-basic.azurewebsites.net/v1/api/divide?a=100&b=20",
 					"protocol": "https",
 					"host": [
-						"calculator-class1-basic2",
+						"calculator-class1-basic",
 						"azurewebsites",
 						"net"
 					],
 					"path": [
 						"v1",
 						"api",
-						"add"
+						"divide"
 					],
 					"query": [
 						{
 							"key": "a",
-							"value": "10"
+							"value": "100"
 						},
 						{
 							"key": "b",
 							"value": "20"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Square Request",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"id": "a4af1eca-aeb5-4b35-9fa2-6b29926964a4",
-						"exec": [
-							"pm.test(\"response is ok\", () => {",
-							"    pm.response.to.have.status(200)",
-							"});",
-							"",
-							"pm.test(\"response is 100\", () => {",
-							"    pm.response.to.have.jsonBody(\"result\", 100)",
-							"});"
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "https://calculator-class1-basic2.azurewebsites.net/v1/api/square?a=10",
-					"protocol": "https",
-					"host": [
-						"calculator-class1-basic2",
-						"azurewebsites",
-						"net"
-					],
-					"path": [
-						"v1",
-						"api",
-						"square"
-					],
-					"query": [
-						{
-							"key": "a",
-							"value": "10"
 						}
 					]
 				}
