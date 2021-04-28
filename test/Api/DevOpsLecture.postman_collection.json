@@ -6,7 +6,7 @@
 	},
 	"item": [
 		{
-			"name": "Add Request",
+			"name": "Multiply Request",
 			"event": [
 				{
 					"listen": "test",
