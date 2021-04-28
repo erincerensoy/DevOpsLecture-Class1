@@ -17,8 +17,8 @@
 							"    pm.response.to.have.status(200)",
 							"});",
 							"",
-							"pm.test(\"response is 5\", () => {",
-							"    pm.response.to.have.jsonBody(\"result\", 5)",
+							"pm.test(\"response is 200\", () => {",
+							"    pm.response.to.have.jsonBody(\"result\", 200)",
 							"});"
 						],
 						"type": "text/javascript"
@@ -29,7 +29,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://calculator-class1-basic.azurewebsites.net/v1/api/divide?a=100&b=20",
+					"raw": "https://calculator-class1-basic.azurewebsites.net/v1/api/multiply?a=10&b=20",
 					"protocol": "https",
 					"host": [
 						"calculator-class1-basic",
@@ -39,12 +39,12 @@
 					"path": [
 						"v1",
 						"api",
-						"divide"
+						"multiply"
 					],
 					"query": [
 						{
 							"key": "a",
-							"value": "100"
+							"value": "10"
 						},
 						{
 							"key": "b",
