@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const routes = require('./routes');
 
 //IP, Port
-const port = process.env.PORT || 80
+const port = process.env.PORT || 8080
 
 const exp = express();
 exp.use(bodyParser.urlencoded({ extended: false }));
