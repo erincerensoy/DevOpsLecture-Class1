@@ -6,7 +6,7 @@ describe("calculator", () => {
     describe("add", () => {
         describe("add 4 to 20", () => {
             it("should return 24", () => {
-                assert.equal(add(4, 20), 23);
+                assert.equal(add(4, 20), 24);
             })
         })
     })
