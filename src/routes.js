@@ -23,6 +23,11 @@ router.get('/multiply', (req, res) => {
   res.status(200).json({ result: additionResult });
 });
 
+router.get('/healthcheck', (req, res) => {
+  res.status(200).json({ result: "healthy" });
+});
+
+
 add = (a, b) => {
   return a + b;
 }
