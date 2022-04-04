@@ -15,6 +15,7 @@ phases:
     commands:
       - echo Build started on `date`
       - echo Running tests
+      - npm install 
       - npm run test
       - echo Building the Docker image...
       - sudo docker build -t $REPOSITORY_URI:latest .
