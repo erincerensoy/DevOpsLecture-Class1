@@ -15,5 +15,5 @@ exp.listen(port, (err) => {
     if (err) {
         console.error('Error::', err);
     }
-    console.log(`running server on from port::::${port}`);
+    console.log(`running server on from port:::::${port}`);
 });
