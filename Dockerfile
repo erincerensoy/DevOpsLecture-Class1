@@ -1,4 +1,5 @@
-FROM node:12
+# FROM node:12
+FROM 991859083081.dkr.ecr.eu-west-1.amazonaws.com/devops-lecture:node
 
 # Create app directory
 
