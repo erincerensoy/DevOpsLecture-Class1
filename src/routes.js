@@ -8,7 +8,7 @@ router.get('/additionn', (req, res) => {
   res.status(200).json({ result: additionResult });
 });
 
-router.get('/substract', (req, res) => {
+router.get('/substractt', (req, res) => {
   let additionResult = calculator.substract(parseInt(req.query.a), parseInt(req.query.b));
   res.status(200).json({ result: additionResult });
 });
