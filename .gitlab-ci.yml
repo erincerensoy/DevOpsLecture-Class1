@@ -52,9 +52,6 @@ deploy-AppRunner:
   stage: deploy-AppRunner
   script:
     - echo "Starting app runner..."
-    - aws apprunner start-deployment --cli-input-json "`cat`"
-{
-  "ServiceArn": "arn:aws:apprunner:us-east-1:123456789012:service/python-app/8fe1e10304f84fd2b0df550fe98a71fa"
-}
+    - aws apprunner start-deployment --service-arn arn:aws:apprunner:eu-west-1:991859083081:service/app-runner-devops-node/a03dc425172a4b6a949661b2cd924bc4
   only:
     - master
