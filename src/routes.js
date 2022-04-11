@@ -12,13 +12,4 @@ router.get('/healthcheck', (req, res) => {
   res.status(200).json({ result: "very healthy" });
 });
 
-
-add = (a, b) => {
-  return a + b;
-}
-
-substract = (a, b) => {
-  return a - b;
-}
-
 module.exports = router
