@@ -36,7 +36,7 @@ build:
     - master
 
 deploy:
-  stage: deploy-AppRunner
+  stage: deploy
   script:
     - echo "Starting app runner..."
     - aws apprunner start-deployment --service-arn arn:aws:apprunner:eu-west-1:991859083081:service/app-runner-devops-node/a03dc425172a4b6a949661b2cd924bc4
