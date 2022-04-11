@@ -20,7 +20,7 @@ before_script:
 
 stages:
   - build
-
+  - deploy-AppRunner
 
 build:
   stage: build
@@ -35,8 +35,8 @@ build:
   only:
     - master
 
-deploy:
-  stage: deploy
+deploy-ECS:
+  stage: deploy-ECS
   script:
     - echo $REPOSITORY_URL:$IMAGE_TAG
     - TASK_DEFINITION=$(aws ecs describe-task-definition --task-definition "$TASK_DEFINITION_NAME" --region "${AWS_DEFAULT_REGION}")
@@ -45,5 +45,16 @@ deploy:
     - aws ecs register-task-definition --region "${AWS_DEFAULT_REGION}" --family "${TASK_DEFINITION_NAME}" --container-definitions "${NEW_CONTAINER_DEFINTIION}" --memory 2048 --requires-compatibilities "FARGATE"
     - echo "Updating the service..."
     - aws ecs update-service --region "${AWS_DEFAULT_REGION}" --cluster "${CLUSTER_NAME}" --service "${SERVICE_NAME}"  --task-definition "${TASK_DEFINITION_NAME}"
+  only:
+    - master
+
+deploy-AppRunner:
+  stage: deploy-AppRunner
+  script:
+    - echo "Starting app runner..."
+    - aws apprunner start-deployment --cli-input-json "`cat`"
+{
+  "ServiceArn": "arn:aws:apprunner:us-east-1:123456789012:service/python-app/8fe1e10304f84fd2b0df550fe98a71fa"
+}
   only:
     - master
