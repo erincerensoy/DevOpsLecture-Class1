@@ -13,6 +13,11 @@ router.get('/substract', (req, res) => {
   res.status(200).json({ result: substractionResult });
 });
 
+router.get('/multiply', (req, res) => {
+  let substractionResult = calculator.multiply(parseInt(req.query.a), parseInt(req.query.b));
+  res.status(200).json({ result: substractionResult });
+});
+
 router.get('/healthcheck', (req, res) => {
   res.status(200).json({ result: "very healthy" });
 });
