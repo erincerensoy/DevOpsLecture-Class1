@@ -20,7 +20,7 @@ before_script:
 
 stages:
   - build
-  - deploy-AppRunner
+  - deploy
 
 build:
   stage: build
@@ -35,23 +35,23 @@ build:
   only:
     - master
 
-deploy-ECS:
-  stage: deploy-ECS
-  script:
-    - echo $REPOSITORY_URL:$IMAGE_TAG
-    - TASK_DEFINITION=$(aws ecs describe-task-definition --task-definition "$TASK_DEFINITION_NAME" --region "${AWS_DEFAULT_REGION}")
-    - NEW_CONTAINER_DEFINTIION=$(echo $TASK_DEFINITION | jq --arg IMAGE "$REPOSITORY_URL:$IMAGE_TAG" '.taskDefinition.containerDefinitions[0].image = $IMAGE | .taskDefinition.containerDefinitions[0]')
-    - echo "Registering new container definition..."
-    - aws ecs register-task-definition --region "${AWS_DEFAULT_REGION}" --family "${TASK_DEFINITION_NAME}" --container-definitions "${NEW_CONTAINER_DEFINTIION}" --memory 2048 --requires-compatibilities "FARGATE"
-    - echo "Updating the service..."
-    - aws ecs update-service --region "${AWS_DEFAULT_REGION}" --cluster "${CLUSTER_NAME}" --service "${SERVICE_NAME}"  --task-definition "${TASK_DEFINITION_NAME}"
-  only:
-    - master
-
-deploy-AppRunner:
+deploy:
   stage: deploy-AppRunner
   script:
     - echo "Starting app runner..."
     - aws apprunner start-deployment --service-arn arn:aws:apprunner:eu-west-1:991859083081:service/app-runner-devops-node/a03dc425172a4b6a949661b2cd924bc4
   only:
     - master
+
+#deploy-ECS:
+#  stage: deploy-ECS
+#  script:
+#    - echo $REPOSITORY_URL:$IMAGE_TAG
+#    - TASK_DEFINITION=$(aws ecs describe-task-definition --task-definition "$TASK_DEFINITION_NAME" --region "${AWS_DEFAULT_REGION}")
+#    - NEW_CONTAINER_DEFINTIION=$(echo $TASK_DEFINITION | jq --arg IMAGE "$REPOSITORY_URL:$IMAGE_TAG" '.taskDefinition.containerDefinitions[0].image = $IMAGE | .taskDefinition.containerDefinitions[0]')
+#    - echo "Registering new container definition..."
+#    - aws ecs register-task-definition --region "${AWS_DEFAULT_REGION}" --family "${TASK_DEFINITION_NAME}" --container-definitions "${NEW_CONTAINER_DEFINTIION}" --memory 2048 --requires-compatibilities "FARGATE"
+#    - echo "Updating the service..."
+#    - aws ecs update-service --region "${AWS_DEFAULT_REGION}" --cluster "${CLUSTER_NAME}" --service "${SERVICE_NAME}"  --task-definition "${TASK_DEFINITION_NAME}"
+#  only:
+#    - master
