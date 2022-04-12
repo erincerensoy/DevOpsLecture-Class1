@@ -9,7 +9,7 @@ router.get('/addition', (req, res) => {
 });
 
 router.get('/healthcheck', (req, res) => {
-  res.status(200).json({ result: "healthy" });
+  res.status(200).json({ result: "very healthy" });
 });
 
 module.exports = router
