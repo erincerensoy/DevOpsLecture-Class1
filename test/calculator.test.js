@@ -1,12 +1,17 @@
 const { describe } = require('mocha');
 const assert = require('assert');
 const { add, substract, multiply, divide } = require('../src/calculator');
+var chai = require('chai')
+, expect = chai.expect
+, should = chai.should();
 
 describe("calculator", () => {
     describe("add", () => {
         describe("add 4 to 20", () => {
             it("should return 24", () => {
-                assert.equal(add(4, 20), 24);
+                //assert.equal(add(4, 20), 24);
+                //expect(add(4, 20)).to.be.equal(24);
+                //add(4, 20).should.equal(24);
             })
         })
     })
@@ -26,9 +31,9 @@ describe("calculator", () => {
         })
     })
     describe("multiply", () => {
-        describe("multiplying 5 to 8", () => {
-            it("should return 40", () => {
-                assert.equal(multiply(5, 8), 40);
+        describe("multiplying 5 to 9", () => {
+            it("should return 45", () => {
+                assert.equal(multiply(5, 9), 45);
             })
         })
     })
