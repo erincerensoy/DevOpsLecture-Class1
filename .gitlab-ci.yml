@@ -24,6 +24,9 @@ stages:
 build:
   stage: build
   script:
+    - echo "Build started on `date`"
+    - echo "Running tests..."
+    - npm run test
     - echo "Building image..."
     - docker build -t $REPOSITORY_URL:latest .
     - echo "Tagging image..."
