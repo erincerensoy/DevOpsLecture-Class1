@@ -1,5 +1,4 @@
-image: 991859083081.dkr.ecr.eu-west-1.amazonaws.com/devops-lecture:node
-
+image: docker:19.03.10
 
 services:
   - docker:dind
@@ -28,8 +27,8 @@ build:
   script:
     - echo "Build started on `date`"
     - echo "Running tests....."
-    - npm install 
-    - npm run test
+    #- npm install 
+    #- npm run test
     - echo "Building image..."
     - docker build -t $REPOSITORY_URL:latest .
     - echo "Tagging image..."

@@ -10,14 +10,14 @@ multiply = (a, b) => {
     return a * b;
 }
 
-multiply1 = (a, b) => {
-    return a * b;
-}
-
 divide = (a, b) => {
     return a / b;
 }
 
+square = (a) => {
+    return multiply(a,a);
+}
+
 module.exports = {
-    add, substract, multiply, divide, multiply1
+    add, substract, multiply, divide, square
 };
