@@ -25,7 +25,7 @@ build:
   stage: build
   script:
     - echo "Build started on `date`"
-    - echo "Running tests...."
+    - echo "Running tests....."
     - npm install 
     - npm run test
     - echo "Building image..."
