@@ -1,4 +1,4 @@
-image: docker:19.03.10
+image: npm:latest
 
 services:
   - docker:dind
