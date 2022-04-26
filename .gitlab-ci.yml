@@ -1,4 +1,4 @@
-image: mhart/alpine-node:12
+image: docker:19.03.10
 
 services:
   - docker:dind
@@ -23,6 +23,7 @@ stages:
 
 build:
   stage: build
+  image: node:12
   script:
     - echo "Build started on `date`"
     - echo "Running tests....."
