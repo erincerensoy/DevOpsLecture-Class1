@@ -12,6 +12,7 @@ variables:
 before_script:
   - apk add --no-cache curl jq python py-pip
   - pip install awscli
+  - pip install npm
   - aws configure set aws_access_key_id $AWS_ACCESS_KEY_ID
   - aws configure set aws_secret_access_key $AWS_SECRET_ACCESS_KEY
   - aws configure set region $AWS_DEFAULT_REGION
@@ -23,7 +24,6 @@ stages:
 
 build:
   stage: build
-  image: node:12
   script:
     - echo "Build started on `date`"
     - echo "Running tests....."
