@@ -14,10 +14,6 @@ divide = (a, b) => {
     return a / b;
 }
 
-square = (a) => {
-    return multiply(a,a);
-}
-
 module.exports = {
     add, substract, multiply, divide, square
 };
