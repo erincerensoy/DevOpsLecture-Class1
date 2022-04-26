@@ -19,40 +19,26 @@ before_script:
   - IMAGE_TAG="$(echo $CI_COMMIT_SHA | head -c 8)"
 
 stages:
-  - test
   - build
 
 build:
   stage: build
   script:
-    - echo "Buil phase started on `date`"
+    - echo "Build started on `date`"
+    #- echo "installing npm..."
+    #- apk add --update npm
+    #- echo "Running tests....."
+    #- npm install 
+    #- npm run test
+    - echo "Building image..."
     - docker build -t $REPOSITORY_URL:latest .
     - echo "Tagging image..."
     - docker tag $REPOSITORY_URL:latest $REPOSITORY_URL:$IMAGE_TAG
     - echo "Pushing image..."
     - docker push $REPOSITORY_URL:latest
     - docker push $REPOSITORY_URL:$IMAGE_TAG
-    - echo "Buil phase ended on `date`"
   only:
     - master
-
-test:
-  stage: test
-  script:
-    - echo "Test phase started on `date`"
-    - echo "installing npm..."
-    - apk add --update npm
-    - echo "Running tests..."
-    - npm install
-    - npm run test
-    - echo "Test phase ended on `date`"
-
-
-
-
-
-
-
 
 #deploy:
 #  stage: deploy
