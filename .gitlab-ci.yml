@@ -23,7 +23,6 @@ stages:
 
 build:
   stage: build
-  image: 991859083081.dkr.ecr.eu-west-1.amazonaws.com/devops-lecture:node
   script:
     - echo "Build started on `date`"
     - echo "Running tests....."
