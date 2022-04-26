@@ -1,4 +1,4 @@
-image: node:12
+image: mhart/alpine-node:12
 
 services:
   - docker:dind
